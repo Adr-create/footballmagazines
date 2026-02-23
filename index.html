@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Все для футбола</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #7fd1c9; color: #000; }
+
+    header { background: #79cfc6; padding: 20px; text-align: center; }
+    header img { width: 160px; }
+
+    nav { margin-top: 15px; }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: linear-gradient(90deg, #66cfcf, #9be2dd);
+    }
+    .slider img { width: 220px; border-radius: 8px; }
+    .slider h2 { margin-left: 40px; font-size: 32px; }
+
+    section { padding: 40px 20px; text-align: center; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .product:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0,1);
+    }
+    
+    .product {
+      background: #9be2dd;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .product img { width: 100px; height: 100px; object-fit: contain; }
+    .product p { margin-top: 10px; font-weight: bold; }
+
+    .ticket {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background: #66cfcf;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    .ticket img { width: 220px; border-radius: 10px; }
+    .ticket ul { text-align: left; }
+
+    .clubs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.club {
+  text-align: center;
+}
+
+.club img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain; /* 🔥 главное */
+}
+
+.club p {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+    .ucl-facts {
+  background: #7fd1c9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.ucl-facts h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.facts-list {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.facts-list li {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.worldcup-link {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.worldcup-link .arrow {
+  font-size: 28px;
+}
+.facts-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: #6b6b6b;
+}
+
+.arrow-box {
+  width: 60px;
+  height: 40px;
+  background: #6b6b6b;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.facts-link:hover .arrow-box {
+  background: #000;
+}
+.page {
+    position: relative;
+    text-align: center;
+}
+
+.main-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* КНОПКА */
+.next-btn {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #5fd0c5;
+    padding: 12px 20px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+/* Наведение */
+.next-btn:hover {
+    background: #4abfb3;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+/* Иконка стрелки */
+.next-btn .icon {
+    font-size: 22px;
+    transition: transform 0.3s;
+}
+
+.next-btn:hover .icon {
+    transform: translateX(5px);
+}
+
+    footer {
+      background: #66bfb7;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="Логотип.png" alt="Все для футбола" />
+  <nav>
+    <a href="#">Контакты</a>
+    <a href="#">Вещи для футбола</a>
+    <a href="#">Билеты ЛЧ</a>
+    <a href="#">Клубы</a>
+    <a href="#">Факты про ЛЧ</a>
+    <a href="#">ЧМ 2026</a>
+  </nav>
+</header>
+
+<div class="slider">
+  <img src="Комлект 1+1.webp" alt="Комплект" />
+  <h2>Комплект 1+1<br>26.990₸</h2>
+</div>
+
+<section>
+  <h2>Футбольные вещи</h2>
+  <div class="products">
+    <div class="product"><img src="Бутсы.png"><p>Бутсы Adidas<br>15.990₸</p></div>
+    <div class="product"><img src="Воротарские  перчатки.png"><p>Перчатки Adidas<br>12.990₸</p></div>
+    <div class="product"><img src="Мяч АДИДАС.png"><p>Мяч ЛЧ<br>10.990₸</p></div>
+    <div class="product"><img src="Футболка Реала.png"><p>Футболка Реал<br>7.990₸</p></div>
+    <div class="product"><img src="Набор лиги чемпионов.png"><p>Набор ЛЧ<br>16.990₸</p></div>
+    <div class="product"><img src="Капитанские повязкие.png"><p>Повязки<br>2.990₸</p></div>
+  </div>
+</section>
+
+
+<section>
+  <h2>Спортивные формы</h2>
+  <div class="products">
+    
+    <div class="product"> <a href="https://futurefootballshop.ru/category/kluby/ispaniya/real-madrid/" target="_blank"> <img src="Спортивная форма Реала.png"> </a><p>Спортивная форма Реала <br>15.990₸</p></div>
+    <div class="product"><a href="https://futurefootballshop.ru/category/kluby/lugue1/psg/"target="_blank"><img src="сПОРТИВНАЯ ФОРМА псж.png"></a><p>Спортивная форма ПСЖ<br>15.990₸</p></div>
+    <div class="product"><a href="https://futurefootballshop.ru/category/kluby/gyermaniya/bavariya/"target="_blank"><img src="Спортивная форма баварии.png"></a><p>Спортивная форма Бавария <br>15.990₸</p></div>
+    <div class="product"><a href="https://futurefootballshop.ru/category/kluby/angliya/arsenal/"target="_blank"><img src="спортивная_форма_Арсенала-removebg-preview.png"></a><p>Спортивная форма Арсенал<br>15.990₸</p></div>
+    <div class="product"><a href="https://futurefootballshop.ru/category/kluby/ispaniya/barselona/"target="_blank"><img src="Барса.png"></a><p>Спортивная форма Барселона<br>15.990₸</p></div>
+    <div class="product"><a href="https://futurefootballshop.ru/category/kluby/gyermaniya/borussiya-dortmund/"target="_blank"><img src="Спортивная форма Борусси.png"></a><p>Спортивная форма Боруссия <br>15.990₸</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Мячи</h2>
+  <div class="products">
+    <div class="product"><a href="https://ozon.kz/category/myach-adidas-chm2010/"><img src="мяч АдидаС (3).png"></a><p>мяч Адидас <br>19.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/myach-evro2020/"><img src="Мяч адидас (2).png"></a><p>мяч Адидас<br>17.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/futbolnye-myachi-11228/adidas-144082850/"><img src="мяч Адидас.png"></a><p>мяч Адидас <br>13.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/myach-ligi-chempionov-uefa/"><img src="Мяч лиги чемпов.png"></a><p>Мяч лиги чемпионов Адидас<br>16.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/myach-ligi-chempionov-uefa/"><img src="Мяч лиги чемпионов Адидас.png"></a><p>Мяч лиги чемпионов Адидас<br>15.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/futbolnye-myachi-11228/nike-18077713/"><img src="Мяч Найк.png"></a><p>Мяч Найк<br>14.990₸</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Вратарские перчатки </h2>
+  <div class="products">
+    <div class="product"><a href="https://ozon.kz/category/luchshie-vratarskie-perchatki/"><img src="Перчатки_вратарские-removebg-preview.png"></a><p>Вратарские перчатки <br>15.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/vratarskie-perchatki-detskie/"><img src="Воротарские  перчатки.png"></a><p>Вратарские перчатки<br>14.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/vratarskie-perchatki-11231/adidas-144082850/"><img src="Перчатки_Адидас-removebg-preview.png"></a><p>Вратарские перчатки Адидас<br>12.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/vratarskie-perchatki-11231/nike-18077713/"><img src="футбольные_перчатки_найк-removebg-preview.png"></a><p>Вратарские перчатки Найк <br>14.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/category/aksessuary-7697/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=%D0%BF%D0%B5%D1%80%D1%87%D0%B0%D1%82%D0%BA%D0%B8+%D0%B4%D0%B6%D0%BE%D1%80%D0%B4%D0%B0%D0%BD"><img src="Футбольные_перчатки_джордан-removebg-preview.png"></a><p>Вратарские перчатки Джордан <br>13.990₸</p></div>
+    <div class="product"><a href="https://ozon.kz/search/?brand=31077445&brand_was_predicted=true&deny_category_prediction=true&from_global=true&text=%D0%BF%D0%B5%D1%80%D1%87%D0%B0%D1%82%D0%BA%D0%B8+%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D1%81"><img src="Футбольные_перчатки_демикс-removebg-preview.png"></a><p>Вратарские перчатки Демикс <br>12.990₸</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="ticket">
+    <img src="Билеты На ЛЧ.png" alt="Билет ЛЧ" />
+    <div>
+      <h2>Билет на 1/8 Лиги Чемпионов</h2>
+      <p><b>Цена:</b> 180.000₸</p>
+      <ul>
+        <li>Топ-клубы Европы</li>
+        <li>Живые эмоции</li>
+        <li>Звёзды футбола</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Клубы которые будут играть в 1/8</h2>
+  <div class="clubs">
+    <div class="club"><img src="Реал Мадрид.png" ><p>Реал Мадрид</p></div>
+    <div class="club"><img src="Ливерпуль.png"><p>Ливерпуль</p></div>
+    <div class="club"><img src="Челси.png"><p>Челси</p></div>
+    <div class="club"><img src="Нью-Касл.png"><p>Ньюкасл</p></div>
+    <div class="club"><img src="Тототенхем.png"><p>Тоттенхэм</p></div>
+    <div class="club"><img src="ПСЖ.png"><p>ПСЖ</p></div>
+    <div class="club"><img src="Арсенал.png"><p>Арсенал</p></div>
+  </div>
+</section>
+<section class="ucl-facts">
+  <h2>Факты про ЛЧ УЕФА 🏆</h2>
+
+  <ul class="facts-list">
+    <li>⭐ <b>Лига чемпионов проводится с 1955 года</b></li>
+    <li>🏆 Раньше называлась <b>Кубок европейских чемпионов</b></li>
+    <li>⚽ <b>Реал Мадрид</b> — самый титулованный клуб (15 побед)</li>
+    <li>🔥 Самый результативный игрок в истории ЛЧ — <b>Криштиану Роналду</b></li>
+    <li>⚽ Роналду — лучший бомбардир турнира</li>
+    <li>🧠 <b>Лионель Месси</b> — второй бомбардир в истории ЛЧ</li>
+  </ul>
+<div class="page">
+    <img src="images/photo1.png" alt="Факты про ЛЧ" class="main-img">
+
+    <a href="футбол2.html" class="next-btn">
+        <span>Расписание на Чм 26</span>
+        <span class="icon">➡️</span>
+    </a>
+</div>
+
+</section>
+<footer>
+  <p>Телефон: +7 775 778 4412 | +7 778 675 8349</p>
+  <p>Адрес: г. Кульсары, ул. Абдрахманова, рядом с главным музеем</p>
+  <p><b>Все про футбол</b></p>
+</footer>
+
+</body>
+</html>
